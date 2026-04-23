@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Companhia do Conserto – Funilaria e Pintura</title>
+<meta name="description" content="Companhia do Conserto: Funilaria e pintura de elite em Mauá. 28 anos de tradição, atendimento a todas as seguradoras e 1 ano de garantia. Peça seu orçamento grátis!">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Camada de Fundo: Elementos visuais abstratos e orbes animados via CSS -->
+<div class="bg-geometric">
+  <div class="bg-grid-mesh"></div>
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
+  <div class="bg-highlight-square" style="top: 20%; left: 15%;"></div>
+  <div class="bg-highlight-square" style="top: 60%; left: 80%;"></div>
+  <div class="bg-highlight-square" style="top: 40%; left: 50%;"></div>
+  <div class="bg-overlay"></div>
+</div>
+
+<!-- Cabeçalho Principal: Contém informações de contato superiores e barra de navegação principal -->
+<header>
+  <!-- Barra superior com dados de contato e redes sociais -->
+  <div class="header-top">
+    <div class="header-top-container">
+      <div class="header-contact-info">
+        <div class="info-item">
+          <span id="business-status" class="status-badge">Verificando...</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>(11) 94722-7662</span>
+        </div>
+        <div class="info-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          <span>Seg–Sex: 08:00 às 17:30 | Sáb: Fechado</span>
+        </div>
+        <div class="header-socials">
+          <a href="https://www.instagram.com/autoestufacanhao?igsh=MTJkdHN3NTlrOTJwNQ==" target="_blank" class="social-item" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/500px-Instagram_icon.png" alt="Instagram" class="social-icon-img">
+          </a>
+          <a href="mailto:adrianocanhao@gmail.com" class="social-item" aria-label="Email">
+            <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gmail.width-500.format-webp.webp" alt="Gmail" class="social-icon-img gmail-icon">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navegação Principal com Logo e Links de Ancoragem -->
+  <nav>
+    <a href="#" class="logo">
+      <img src="img/Logo.png" alt="Logo Auto Estufa Canhão" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre nós</a></li>
+      <li><a href="#portfolio">Antes/Depois</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#orcamento" class="nav-cta">Orçamento Grátis</a></li>
+    </ul>
+    <!-- Botão Hamburguer para dispositivos móveis -->
+    <button class="mobile-menu-toggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<!-- Seção Hero: Impacto visual inicial, Proposta de Valor e Chamada para Ação (CTA) -->
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto" class="hero-video desktop-video">
+    <source src="video/seu-video.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline preload="auto" class="hero-video mobile-video">
+    <source src="img/VideoFundo1.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Destaque em atendimento ao cliente</div>
+    <h1>Reparação de Elite com <br><span class="highlight">Padrão de Seguradora</span></h1>
+    <p>Qualidade técnica superior, agilidade na entrega e a confiança de quem é referência para as maiores companhias de seguro do Brasil.</p>
+    
+    <div class="hero-buttons">
+      <a href="https://wa.me/5511947227662" class="btn-primary">Agende seu Serviço</a>
+      <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+    </div>
+
+    <!-- Grid de diferenciais rápidos no Hero -->
+    <div class="hero-features-grid">
+      <div class="h-feature">
+        <div class="h-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <span>Atendimento Ágil</span>
+      </div>
+      <div class="h-feature">
+        <div class="h-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <span>Garantia de Serviço</span>
+      </div>
+      <div class="h-feature">
+        <div class="h-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <span>Equipe Especializada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Barra de Parceiros: Exibição de logotipos de seguradoras com animação de ciclo de cores -->
+<div class="insurance-bar">
+  <div class="ib-text">Atendemos as principais seguradoras:</div>
+  <div class="ib-logos">
+    <img src="https://aliancasaude.com/images/logo_porto_seguro.webp" alt="Porto Seguros">
+    <img src="https://wanderleiseguros.com.br/wp-content/uploads/2024/11/LOGO-AZUL-SEGUROS.png" alt="Azul Seguros">
+    <img src="https://logodownload.org/wp-content/uploads/2014/05/itau-logo-7.png" alt="Itaú Seguros">
+    <img src="https://insurancecorp.com.br/pt/wp-content/uploads/2018/06/sura.png" alt="Sura Seguros">
+    <img src="https://cdn.prod.website-files.com/5cf15975c98bab43ef938175/5cf1a7856e00f52f153348c9_Bradesco%20logo%20round.png" alt="Bradesco Seguros">
+    <img src="https://stoicaseguros.com.br/wp-content/uploads/2025/12/hdi.webp" alt="HDI Seguros">
+    <img src="https://tonattoseguros.com.br/wp-content/uploads/2024/10/Landing-Page-RE-CASA-LOGOS-DE-SEGURADORAS-yel-300x300.png" alt="Yelum Seguros">
+    <img src="https://stoicaseguros.com.br/wp-content/uploads/2025/12/allianz.webp" alt="Allianz">
+    <img src="https://nfq.es/wp-content/uploads/Santander-Seguros-Logo.png" alt="Santander Seguros">
+    <img src="https://renaseg.com/images/company/youse.png" alt="Youse Seguros">
+    <img src="https://neonseguros.com.br/wp-content/uploads/2024/06/Logo-Mitsui-Sumitomo.png" alt="Mitsui Seguros">
+    <img src="https://neonseguros.com.br/wp-content/uploads/2024/03/Ezze-Seguros.png" alt="Ezze Seguros">
+  </div>
+</div>
+
+<!-- Barra de Estatísticas: Indicadores de performance com efeito de contagem progressiva (JS) -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-number count-up" data-target="28" data-suffix="+">28</div>
+    <div class="stat-label">Anos de história</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number count-up" data-target="30000" data-suffix="+">30.000+</div>
+    <div class="stat-label">Clientes atendidos</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number count-up" data-target="1" data-suffix=" ano">1 ano</div>
+    <div class="stat-label">De garantia no serviço</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number count-up" data-target="4.9" data-suffix=" ★">4.9 ★</div>
+    <div class="stat-label">Nota no Google</div>
+  </div>
+</div>
+<!-- Seção de Serviços: Catálogo de soluções oferecidas pela oficina -->
+<section class="services" id="servicos">
+  <div class="services-header">
+    <div class="section-tag">// Serviços</div>
+    <h2 class="section-title">Tudo que seu carro precisa<br>em um só lugar</h2>
+    <p class="section-sub">Da funilaria à pintura, oferecemos serviços completos com profissionais experientes e materiais de primeira linha.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+      </div>
+      <h3>Funilaria</h3>
+      <p>Reparação completa de amassados, deformações e danos estruturais na lataria do seu veículo, devolvendo o visual original.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M18 4v1h-2V4c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v1H6V4c0-.55-.45-1-1-1s-1 .45-1 1v16c0 .55.45 1 1 1s1-.45 1-1v-1h2v1c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-1h2v1c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1zm-2 11H8V9h8v6z"/></svg>
+      </div>
+      <h3>Pintura Automotiva</h3>
+      <p>Cabine de pintura com estufa profissional, matching perfeito de cores e acabamento impecável com garantia total.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      </div>
+      <h3>Martelinho de Ouro</h3>
+      <p>Técnica artesanal de restauração para pequenos amassados sem necessidade de pintura, preservando a originalidade.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>
+      </div>
+      <h3>Atendimento a Seguradoras</h3>
+      <p>Trabalhamos com todas as principais seguradoras do mercado, facilitando todo o processo de sinistro para você.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+      </div>
+      <h3>Polimento e Estética</h3>
+      <p>Polimento técnico e comercial, higienização completa e tratamentos que devolvem o brilho e protegem a pintura.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="var(--accent)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      </div>
+      <h3>Garantia</h3>
+      <p>1 ano de garantia em todos os serviços realizados. Acompanhamento completo com fotos e vídeos do processo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Seção Sobre: História da empresa e prova social integrada com o Google Maps -->
+<section id="sobre">
+  <div class="about-grid">
+    <div class="about-visual">
+      <!-- Integração de Mapa Dinâmico -->
+      <div class="about-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.492150997184!2d-46.4475475!3d-23.6582522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce69614a8738e3%3A0x6d8e23f77918968d!2sR.%20Carlo%20de%20Campo%2C%20512%20-%20Vila%20Nossa%20Sra.%20das%20Vit%C3%B3rias%2C%20Mau%C3%A1%20-%20SP%2C%2009360-090!5e0!3m2!1spt-BR!2sbr!4v1712465066000!5m2!1spt-BR!2sbr" 
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="about-visual-number count-up" data-target="28" data-suffix="+">28+</div>
+      <div class="about-visual-label">anos cuidando do seu veículo</div>
+      <div class="about-visual-stats">
+        <div class="visual-stat-box secondary">
+          <div class="visual-stat-value count-up" data-target="15000" data-suffix="k+">15k+</div>
+          <div class="visual-stat-text">Clientes satisfeitos</div>
+        </div>
+        <div class="visual-stat-box primary">
+          <div class="visual-stat-value count-up" data-target="4.9" data-suffix="★">4.9★</div>
+          <div class="visual-stat-text">Avaliação no Google</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag">// Sobre nós</div>
+      <h2 class="section-title">Experiência e infraestrutura que fazem a diferença</h2>
+      <p class="about-description">
+        Há 28 anos, a Companhia do Conserto cuida de cada veículo com a seriedade, a transparência e o padrão de qualidade que o cliente procura em um momento delicado. Somos uma empresa familiar de Mauá, na Vila Vitória, especializada em funilaria e pintura, atendendo veículos particulares e todas as seguradoras, sempre com organização, agilidade e atenção em cada etapa do processo.
+      </p>
+      <p class="about-description">
+        Nosso compromisso é entregar um serviço bem feito de verdade, com acabamento impecável, comunicação clara e respeito ao prazo. Trabalhamos com tintas <span class="highlight-brand">Lazuril</span>, máquina de pesagem para maior precisão no acerto de cor e cabine de pintura <span class="highlight-brand">Usiitalia</span>, referência mundial no setor. Tudo isso com 1 ano de garantia e a experiência de quem já reparou +30.000 veículos.
+      </p>
+      <ul class="about-list">
+        <li>
+          <div class="checkmark">
+            <svg viewBox="0 0 12 12" fill="none"><polyline points="10,3 4.5,8.5 2,6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          Cabine de pintura com estufa profissional
+        </li>
+        <li>
+          <div class="checkmark">
+            <svg viewBox="0 0 12 12" fill="none"><polyline points="10,3 4.5,8.5 2,6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          Laboratório de tintas com matching preciso de cores
+        </li>
+        <li>
+          <div class="checkmark">
+            <svg viewBox="0 0 12 12" fill="none"><polyline points="10,3 4.5,8.5 2,6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          Acompanhamento com fotos e vídeos em todas as etapas
+        </li>
+        <li>
+          <div class="checkmark">
+            <svg viewBox="0 0 12 12" fill="none"><polyline points="10,3 4.5,8.5 2,6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          1 ano de garantia em todos os serviços
+        </li>
+        <li>
+          <div class="checkmark">
+            <svg viewBox="0 0 12 12" fill="none"><polyline points="10,3 4.5,8.5 2,6" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          Atendimento a todas as seguradoras
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Estrutura: Galeria visual das instalações físicas -->
+<section class="structure" id="estrutura">
+  <div class="services-header">
+    <div class="section-tag">// Infraestrutura</div>
+    <h2 class="section-title">Conheça nosso espaço</h2>
+    <p class="section-sub">Ambiente planejado com equipamentos de última geração para oferecer o padrão de acabamento que seu veículo merece.</p>
+  </div>
+  <div class="structure-grid">
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipMv2GcTotSMlfKpzLxqrLjXcqziNmFi8gzzhbE4=s1360-w1360-h1020-rw" alt="Estrutura Oficina 1">
+    </div>
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipOFSdCPVQtKxKdIliVBmCfucdjoU2mF8NCMwsKR=s1360-w1360-h1020-rw" alt="Estrutura Oficina 2">
+    </div>
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNO315VMrkhkoBbbtTWI-XE67qnPpvmv7ZhJgMe=s1360-w1360-h1020-rw" alt="Estrutura Oficina 3">
+    </div>
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNfLBpFmuShViXc0MgNGcbehiQ83C9l4qIWw-WK=s1360-w1360-h1020-rw" alt="Estrutura Oficina 4">
+    </div>
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipPurKan8E_P_BMkzHswHybwT_vEMRj8Ysdrin_M=s1360-w1360-h1020-rw" alt="Estrutura Oficina 5">
+    </div>
+    <div class="structure-item">
+      <img src="https://lh3.googleusercontent.com/p/AF1QipNvV9E6nMxjOfoMR_nVurzNH2ByF4CUhwqm1ALp=s1360-w1360-h1020-rw" alt="Estrutura Oficina 6">
+    </div>
+  </div>
+  <div class="structure-dots"></div>
+</section>
+
+<!-- Seção Portfolio: Comparativo "Antes e Depois" com efeito de máscara via CSS (clip-path) -->
+<section class="portfolio" id="portfolio">
+  <div class="services-header">
+    <div class="section-tag">// Galeria de Resultados</div>
+    <h2 class="section-title">Transformações Reais</h2>
+    <p class="section-sub">Passe o mouse (ou toque) nas imagens para ver a mágica acontecer. Do estrago à perfeição original.</p>
+  </div>
+
+  <div class="portfolio-grid">
+    <!-- Item de Portfólio 1 -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <span class="label-before">Antes</span>
+        <img src="img/antes_corolla.jpg" alt="Carro Batido (Antes)">
+        <img src="img/depois_corolla.jpg" alt="Carro Recuperado (Depois)">
+        <span class="label-after">Depois</span>
+      </div>
+      <div class="gallery-info">
+        <h4>Reparação de Colisão</h4>
+        <span>Toyota Corolla - Troca lateral, parachoque e recuperação da porta</span>
+      </div>
+    </div>
+    <!-- Item de Portfólio 2 -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <span class="label-before">Antes</span>
+        <img src="img/antes_yaris.jpg" alt="Amassado Lateral (Antes)">
+        <img src="img/depois_yaris.jpg" alt="Porta Recuperada (Depois)">
+        <span class="label-after">Depois</span>
+      </div>
+      <div class="gallery-info">
+        <h4>Funilaria e Pintura</h4>
+        <span>Toyota Yaris - Troca da porta, retrovisor, paralama e recuperação da coluna, capo e parachoque dianteiro</span>
+      </div>
+    </div>
+    <!-- Item de Portfólio 3 -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <span class="label-before">Antes</span>
+        <img src="img/polo_antes.jpg" alt="Pintura Desbotada (Antes)">
+        <img src="img/polo_depois.jpg" alt="Pintura Nova (Depois)">
+        <span class="label-after">Depois</span>
+      </div>
+      <div class="gallery-info">
+        <h4>Reparação de Colisão Traseira</h4>
+        <span>VW Polo - Tampa traseira, parachoque traseiro, recuperação da lateral esquerda, painel traseiro e assoalho</span>
+      </div>
+    </div>
+    <!-- Item de Portfólio 4 -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <span class="label-before">Antes</span>
+        <img src="img/antes_prisma.jpg" alt="Chevrolet Prisma (Antes)">
+        <img src="img/depois_prisma.jpg" alt="Chevrolet Prisma (Depois)">
+        <span class="label-after">Depois</span>
+      </div>
+      <div class="gallery-info">
+        <h4>Funilaria e Pintura</h4>
+        <span>Chevrolet Prisma - Recuperação de lateral traseira e pintura técnica</span>
+      </div>
+    </div>
+    <!-- Item de Portfólio 5 -->
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <span class="label-before">Antes</span>
+        <img src="img/antes_corsa.jpg" alt="Chevrolet Corsa (Antes)">
+        <img src="img/depois_corsa.jpg" alt="Chevrolet Corsa (Depois)">
+        <span class="label-after">Depois</span>
+      </div>
+      <div class="gallery-info">
+        <h4>Funilaria e Pintura</h4>
+        <span>Chevrolet Corsa - Reparação de danos e pintura completa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Avaliações: Testemunhos reais com sistema de paginação via JavaScript -->
+<section class="reviews" id="avaliacoes">
+  <div class="reviews-header">
+    <div class="section-tag">// Avaliações 5 estrelas</div>
+    <h2 class="section-title">O que nossos clientes dizem</h2>
+    <div class="reviews-meta">
+      <div class="stars">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <span class="reviews-count">4.9 · +300 avaliações no Google</span>
+      </div>
+      <div class="reviews-nav">
+        <button id="prev-review" class="nav-arrow" aria-label="Avaliações anteriores" style="opacity: 0; pointer-events: none;">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button id="next-review" class="nav-arrow" aria-label="Próximas avaliações">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Conjunto de Avaliações 1 -->
+  <div class="reviews-grid reviews-page active" id="page-1">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Conheço o Beto funileiro a mais de 20 anos , então resolvi levar um desafio para ele e o pessoal da Companhia do Conserto Auto Estufa, reformar dois pára-choques que estavam com algumas imperfeições , amassados e o veículo um civic 2014 , ao buscar o veículo , fui surpreendido os serviços ficaram 1000 vezes melhor que o esperado, quero parabenizar a todos , desde funileiros , auxiliares , pintor de um talento incomparável e jovem , Eduardo o filho do Beto são muito educados. Obrigado a todos e recomendo fortemente , serviços de qualidade e preço justo .</p>
+      <div class="review-author">
+        <div class="avatar">MS</div>
+        <div>
+          <div class="review-name">Marcelo Esmero da Silva</div>
+          <div class="review-date">há 1 semana · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Deixei meu veículo na oficina após sofrer um acidente e ontem o veículo ficou pronto. Estou muito satisfeita com o serviço executado. Impecável o atendimento do início ao fim.</p>
+      <div class="review-author">
+        <div class="avatar">
+          <img src="https://lh3.googleusercontent.com/a-/ALV-UjWhBgvf9Nr_0msMQM09BnqTqsNK5Fg2K88ASN090gDgp8c7u054oA=w90-h90-p-rp-mo-ba2-br100" alt="Lourdes Abe Martins">
+        </div>
+        <div>
+          <div class="review-name">Lourdes Abe Martins</div>
+          <div class="review-date">há 2 dias · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+        <p class="review-text">Excelente oficina, o Beto e o Edu são super atenciosos, prestativos e o serviço de funilaria e pintura ficou perfeito, recomendo a todos.</p>
+      <div class="review-author">
+          <div class="avatar">SF</div>
+        <div>
+            <div class="review-name">Silas Ferreira</div>
+            <div class="review-date">há 1 mês · Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conjunto de Avaliações 2 -->
+  <div class="reviews-grid reviews-page" id="page-2">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Sensacional, trabalho de qualidade, preço justo e prazos cumpridos. Mais que recomendo!!!!</p>
+      <div class="review-author">
+        <div class="avatar">
+          <img src="https://lh3.googleusercontent.com/a-/ALV-UjVRuQs7elbJcVtngGFbvF_GzSC1Gvakuddj7p0Z0R2fJzbBu-Ss=w90-h90-p-rp-mo-ba3-br100" alt="Fábio Dias">
+        </div>
+        <div>
+          <div class="review-name">Fábio Dias</div>
+          <div class="review-date">há 1 semana · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Melhor oficina de pintura de Mauá..</p>
+      <div class="review-author">
+        <div class="avatar">
+          <img src="https://lh3.googleusercontent.com/a-/ALV-UjXST7RH5aLShwGN-iAQmcFk8A8UpXO-hz758YWhpLjlusfsM-FqqA=w72-h72-p-rp-mo-ba3-br100" alt="Roberto Zum">
+        </div>
+        <div>
+          <div class="review-name">Roberto Zum</div>
+          <div class="review-date">há 2 semanas · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Proprietário muito educado e funcionários treinados</p>
+      <div class="review-author">
+        <div class="avatar">DV</div>
+        <div>
+          <div class="review-name">Davi Expedito Venâncio de Jesus</div>
+          <div class="review-date">há 1 mês · Google</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção CTA Final: Reforço de fechamento e link direto para contato -->
+<section class="cta-section" id="orcamento">
+  <h2>Pronto para recuperar seu carro?</h2>
+  <p>Solicite agora um orçamento gratuito e sem compromisso. Atendemos você rapidamente!</p>
+  <a href="https://wa.me/5511947227662?text=Olá! Gostaria de solicitar um orçamento." class="btn-white">
+    Solicitar orçamento gratuito →
+  </a>
+</section>
+
+</main>
+
+<!-- Rodapé: Mapa do site, contatos legais e créditos de desenvolvimento -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>Companhia do Conserto</strong>
+      <span>Funilaria &amp; Pintura</span>
+      <p>Qualidade no serviço, excelência no atendimento. A oficina que você procura, com a segurança que seu carro precisa.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#">Funilaria</a></li>
+        <li><a href="#">Pintura Automotiva</a></li>
+        <li><a href="#">Martelinho de Ouro</a></li>
+        <li><a href="#">Polimento</a></li>
+        <li><a href="#">Seguradoras</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="tel:11947227662">(11) 94722-7662</a></li>
+        <li><a href="#">adrianocanhao@gmail.com</a></li>
+        <li><a href="#">Seg–Sex: 08:00 às 17:30</a></li>
+        <li><a href="#">Sáb–Dom: Fechado</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Companhia do Conserto. Todos os direitos reservados. | Desenvolvido por <a href="https://www.linkedin.com/in/brenosilvavale/" target="_blank" rel="noopener noreferrer" class="developer-link">Breno Silva</a></span>
+    <span>Feito com <span class="footer-accent">♥</span> para quem ama seu carro</span>
+  </div>
+</footer>
+
+<!-- Botão Flutuante: Canal direto para conversão imediata via WhatsApp -->
+<a href="https://wa.me/5511947227662?text=Olá! Gostaria de solicitar um orçamento." class="whatsapp-float" target="_blank" aria-label="Contato pelo WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.445 0 .01 5.437.006 12.042c0 2.112.552 4.17 1.601 5.99L0 24l6.135-1.61a11.83 11.83 0 005.912 1.569h.005c6.608 0 12.042-5.44 12.046-12.042a11.85 11.85 0 00-3.486-8.514z"/>
+  </svg>
+</a>
+
+<!-- Script para Rolagem Suave (Lenis) -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
