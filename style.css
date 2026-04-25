@@ -445,6 +445,27 @@ nav ul li a:hover { color: white; }
   cursor: pointer;
 }
 
+/* Wrapper para posicionar o selo diamante */
+.featured-partner-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: -1; /* Garante que os parceiros diamante apareçam primeiro */
+}
+
+/* Destaque para seguradoras principais */
+.ib-logos img.featured-partner {
+  height: 90px;
+  filter: drop-shadow(0 0 15px rgba(30, 41, 59, 0.4));
+  z-index: 2;
+}
+
+/* Hover específico para as seguradoras em destaque */
+.ib-logos img.featured-partner:hover {
+  filter: brightness(1.1) drop-shadow(0 0 25px rgba(30, 41, 59, 0.7));
+}
+
 /* ANIMATIONS */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -1205,6 +1226,12 @@ footer { background: #0d0d1a; padding: 56px 6% 32px; color: rgba(255,255,255,0.5
 
   .insurance-bar { gap: 20px; padding: 32px 4%; }
   .ib-logos img { height: 45px; }
+
+  /* Destaque no mobile */
+  .ib-logos img.featured-partner {
+    height: 60px;
+    filter: drop-shadow(0 0 10px rgba(30, 41, 59, 0.4));
+  }
 
   .stats-bar { padding: 40px 4%; }
   .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 0; }
