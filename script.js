@@ -1,7 +1,4 @@
-/**
- * Companhia do Conserto - Scripts Principais
- * Responsável por: Scroll Suave, Contadores, Galeria, Menu Mobile e Status de Funcionamento.
- */
+// Companhia do Conserto - Scripts Otimizados
 
 // 1. Inicialização da biblioteca Lenis para Smooth Scrolling nativo
 const lenis = new Lenis();
@@ -38,17 +35,17 @@ function animateCount(element, target, suffix, duration) {
     if (current >= target) {
       current = target;
       clearInterval(timer);
+      element.innerText = (isKilo ? Math.floor(current / 1000) : (target % 1 !== 0 ? current.toFixed(1).replace('.', ',') : formatNumber(Math.floor(current)))) + suffix;
+      return;
     }
-
-    let displayValue;
-    if (isKilo) {
-      displayValue = Math.floor(current / 1000);
-    } else if (target % 1 !== 0) {
-      displayValue = current.toFixed(1).replace('.', ',');
+    let val;
+    if (isKilo) val = Math.floor(current / 1000);
+    else if (target % 1 !== 0) {
+      val = current.toFixed(1).replace('.', ',');
     } else {
-      displayValue = formatNumber(Math.floor(current));
+      val = formatNumber(Math.floor(current));
     }
-    element.innerText = displayValue + suffix;
+    element.innerText = val + suffix;
   }, 16);
 }
 
@@ -67,33 +64,29 @@ const countUpObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.5 });
 
 countUpElements.forEach(element => {
-  element.innerText = '0' + (element.dataset.suffix || '');
   countUpObserver.observe(element);
 });
 
 // 5. Navegação de Avaliações
-const prevBtn = document.getElementById('prev-review');
-const nextBtn = document.getElementById('next-review');
-const page1 = document.getElementById('page-1');
-const page2 = document.getElementById('page-2');
+const revNav = (showPage2) => {
+  const p1 = document.getElementById('page-1');
+  const p2 = document.getElementById('page-2');
+  const next = document.getElementById('next-review');
+  const prev = document.getElementById('prev-review');
 
-if (nextBtn && prevBtn) {
-  nextBtn.addEventListener('click', () => {
-    page1.classList.remove('active');
-    page2.classList.add('active');
-    nextBtn.style.opacity = '0'; nextBtn.style.pointerEvents = 'none';
-    prevBtn.style.opacity = '1'; prevBtn.style.pointerEvents = 'all';
-    setTimeout(() => lenis.resize(), 500);
-  });
+  if (!p1 || !p2 || !next || !prev) return;
 
-  prevBtn.addEventListener('click', () => {
-    page2.classList.remove('active');
-    page1.classList.add('active');
-    prevBtn.style.opacity = '0'; prevBtn.style.pointerEvents = 'none';
-    nextBtn.style.opacity = '1'; nextBtn.style.pointerEvents = 'all';
-    setTimeout(() => lenis.resize(), 500);
-  });
-}
+  p1.classList.toggle('active', !showPage2);
+  p2.classList.toggle('active', showPage2);
+  next.style.opacity = showPage2 ? '0' : '1';
+  next.style.pointerEvents = showPage2 ? 'none' : 'all';
+  prev.style.opacity = showPage2 ? '1' : '0';
+  prev.style.pointerEvents = showPage2 ? 'all' : 'none';
+  setTimeout(() => lenis.resize(), 500);
+};
+
+document.getElementById('next-review')?.addEventListener('click', () => revNav(true));
+document.getElementById('prev-review')?.addEventListener('click', () => revNav(false));
 
 // 6. Menu Mobile
 const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -112,7 +105,7 @@ document.querySelectorAll('.gallery').forEach((gallery) => {
   
   function animate() {
     position += direction;
-    if (position >= 90 || position <= 10) direction *= -1;
+    if (position > 90 || position < 10) direction *= -1;
     gallery.style.setProperty('--exposure', `${position}%`);
     requestAnimationFrame(animate);
   }
@@ -142,38 +135,83 @@ const structureGrid = document.querySelector('.structure-grid');
 const dotsContainer = document.querySelector('.structure-dots');
 if (structureGrid && dotsContainer) {
   const items = structureGrid.querySelectorAll('.structure-item');
-  items.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dotsContainer.appendChild(dot);
-  });
+  if (items.length > 0) {
+    items.forEach((_, i) => {
+      const dot = document.createElement('div'); 
+      dot.className = 'dot';
+      if (i === 0) dot.classList.add('active');
+      dotsContainer.appendChild(dot);
+    });
+  }
   const dots = dotsContainer.querySelectorAll('.dot');
   structureGrid.addEventListener('scroll', () => {
-    const index = Math.round(structureGrid.scrollLeft / (items[0].offsetWidth + 16));
+    const index = Math.round(structureGrid.scrollLeft / (items[0]?.offsetWidth + 16 || 1));
     dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
   }, { passive: true });
 }
 
-// 10. Forçar a reprodução dos vídeos do Hero (Correção para Mobile e Autoplay)
+// 10. Forçar a reprodução dos vídeos do Hero
 function forceHeroVideoPlay() {
-  const videos = document.querySelectorAll('.hero-video');
-  
-  videos.forEach(video => {
-    // Tenta reproduzir automaticamente
+  document.querySelectorAll('.hero-video').forEach(video => {
     const playPromise = video.play();
-    
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        // Se o navegador bloquear (comum em mobile), tenta dar play no primeiro toque ou clique
-        const playOnGesture = () => {
+        const playOn = () => {
           video.play();
-          ['click', 'touchstart'].forEach(evt => document.removeEventListener(evt, playOnGesture));
+          ['click', 'touchstart'].forEach(e => document.removeEventListener(e, playOn));
         };
-        ['click', 'touchstart'].forEach(evt => document.addEventListener(evt, playOnGesture));
+        ['click', 'touchstart'].forEach(e => document.addEventListener(e, playOn));
       });
     }
   });
 }
 
-document.addEventListener('DOMContentLoaded', forceHeroVideoPlay);
+// 11. Lógica do Botão "Ler Mais" para Avaliações
+function initReadMore() {
+  const reviews = document.querySelectorAll('.review-text');
+  
+  reviews.forEach(text => {
+    // Aplicamos temporariamente a classe de limite para medir se haverá corte
+    text.classList.add('is-truncated');
+
+    const page = text.closest('.reviews-page');
+    const isHidden = getComputedStyle(page).display === 'none';
+
+    // Para elementos ocultos (página 2), precisamos forçar visibilidade para o cálculo de altura funcionar
+    if (isHidden) {
+      page.style.display = 'grid';
+      page.style.visibility = 'hidden';
+      page.style.position = 'absolute';
+    }
+
+    // Verificamos se a altura total do texto é maior que a altura limitada às 8 linhas
+    const isLong = text.scrollHeight > text.offsetHeight;
+
+    if (isHidden) {
+      page.style.display = '';
+      page.style.visibility = '';
+      page.style.position = '';
+    }
+
+    if (isLong) {
+      const btn = document.createElement('button');
+      btn.className = 'read-more-btn';
+      btn.textContent = 'Ler mais...';
+      text.parentNode.insertBefore(btn, text.nextSibling);
+
+      btn.addEventListener('click', () => {
+        const truncated = text.classList.toggle('is-truncated');
+        btn.textContent = truncated ? 'Ler mais...' : 'Ler menos';
+        if (typeof lenis !== 'undefined') lenis.resize();
+      });
+    } else {
+      // Se o texto couber em 8 linhas, removemos a classe de limite e não adicionamos o botão
+      text.classList.remove('is-truncated');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  forceHeroVideoPlay();
+  initReadMore();
+});
